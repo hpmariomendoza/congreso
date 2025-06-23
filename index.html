@@ -432,8 +432,9 @@
             display: inline-block;
         }
 
-        /* Fila de refrigerio con fondo de rayas rosadas y blanco */
-        .schedule-modal-table tr.refrigerio-row td {
+        /* Fila de refrigerio y registro de asistencia con fondo de rayas rosadas y blanco */
+        .schedule-modal-table tr.refrigerio-row td,
+        .schedule-modal-table tr.registro-row td {
             background: repeating-linear-gradient(
                 135deg,
                 #f6eaff 0 10px,
@@ -443,17 +444,21 @@
             color: #93268f;
         }
 
-        /* Botón de registrar en el modal: siempre debajo y centrado, nunca sobre texto */
+        /* Botón de registrar siempre visible y fijo en la parte inferior del modal */
         #scheduleModal .modal-footer {
+            position: sticky;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            z-index: 20;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 1.5em 0 0.5em 0;
-            background: transparent;
-            flex-direction: row;
-            flex-wrap: wrap;
+            padding: 1em 0 0.7em 0;
             border-top: 1px solid #eee;
-            margin-top: 1.5em;
+            margin-top: 0;
+            box-shadow: 0 -2px 12px #e6f2ff77;
         }
 
         #scheduleModal .modal-footer .btn {
@@ -466,7 +471,6 @@
             #scheduleModal .modal-footer {
                 flex-direction: column;
                 padding: 0.7em 0 0.5em 0;
-                margin-top: 1em;
             }
             #scheduleModal .modal-footer .btn {
                 width: 100%;
@@ -618,8 +622,8 @@
                 <h3 class="text-center">Taller Pre-Congreso Presencial</h3>
                 <h4 class="text-center">En el aula Magna de la Universidad José Cecilio del Valle</h4>
                 <p class="text-center"><strong>Lunes 25 de agosto - Cupos limitados</strong></p>
-                <p class="text-center">horario de 8:00 am a 12:00m</p>
-                
+                <p class="text-center">horario de 7:30 am a 01:15 pm</p>
+
                 <div class="text-center mb-4">
                     <span class="badge" style="font-size:1.25rem"><strong>Costo del taller: L.500.00</strong> </span>
                 </br/><span class="badge">VALOR CENEMEC: 0.25 puntos</span>
@@ -631,7 +635,7 @@
                 <h3 class="text-center">Congreso Presencial</h3>
                 <p class="text-center"><strong>26 y 27 de agosto</strong></p>
                 <h4 class="text-center">En el aula Magna de la Universidad José Cecilio del Valle</h4>
-                <p class="text-center">horario de 8:00 am a 5:00 pm</p>
+                <p class="text-center">horario de 7:00 am a 5:00 pm</p>
                 <p class="text-center"><strong>Parqueo gratuito</strong></p>
                 <div class="features-grid">
                     <div class="feature-card">
@@ -845,7 +849,7 @@
                         <th>Actividad</th>
                         <th>Expositor</th>
                     </tr>
-                    <tr>
+                    <tr class="registro-row">
                         <td>7:30 AM 8:00 AM</td>
                         <td>Registro de asistencia y entrega de kit de bienvenida</td>
                         <td></td>
@@ -877,7 +881,7 @@
                         <th>Actividad</th>
                         <th>Expositor</th>
                     </tr>
-                    <tr><td>7:00 AM 7:55 AM</td><td>Registro de asistencia y entrega de kit de bienvenida</td><td></td></tr>
+                    <tr class="registro-row"><td>7:00 AM 7:55 AM</td><td>Registro de asistencia y entrega de kit de bienvenida</td><td></td></tr>
                     <tr><td>7:55 AM 8:00 AM</td><td>Palabras de bienvenida</td><td><strong>Dr. Mario Aguilar</strong><br><em>Director Ejecutivo</em></td></tr>
                     <tr><td>8:00 AM 8:35 AM</td><td>Enfermedades médicas asociadas a trastornos de salud mental en la atención primaria (trastornos cardíacos, hormonales, metabólicos, etc), DD del estado confusional, DD del SD de agitación</td><td><strong>Dr. Alex Nuñez</strong><br><em>Médico Internista</em></td></tr>
                     <tr><td>8:35 AM 9:05 AM</td><td>Detección de recaída, fallas en la adherencia y efectos adversos a psicofármacos a nivel comunitario</td><td><strong>Dra. Diana Banegas</strong><br><em>Psiquiatra</em></td></tr>
@@ -905,7 +909,7 @@
                         <th>Actividad</th>
                         <th>Expositor</th>
                     </tr>
-                    <tr><td>7:00 AM 7:55 AM</td><td>Registro de asistencia</td><td></td></tr>
+                    <tr class="registro-row"><td>7:00 AM 7:55 AM</td><td>Registro de asistencia</td><td></td></tr>
                     <tr><td>8:00 AM 8:35 AM</td><td>Disfunción endócrina asociada al uso de psicofármacos</td><td><strong>Dra. Maria Alejandra Ramos Guifarro</strong><br><em>Médico Internista, Subespecialidad en endocrinología</em></td></tr>
                     <tr><td>8:35 AM 9:05 AM</td><td>Medicamentos de depósito en salud mental</td><td><strong>Dra. Sara Murillo</strong><br><em>Psiquiatra</em></td></tr>
                     <tr><td>9:05 AM 9:40 AM</td><td>Análisis del estado nutricional y evaluación de la dieta en pacientes adultos hospitalizados en el HPMM</td><td><strong>MSc. Iris Cordova</strong><br><em>Licenciada en Administración Industrial y de Negocios, Licenciada en Nutrición, Msc. Internacional en Nutrición y Dietética con especialidad en nutrición Clínica</em></td></tr>
