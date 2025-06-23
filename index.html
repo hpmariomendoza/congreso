@@ -909,6 +909,26 @@
                 modal.style.display = "none";
             }
         }
+
+        // Modal de Programa
+        const scheduleModal = document.getElementById("scheduleModal");
+        const openScheduleModal = document.getElementById("openScheduleModal");
+        const closeScheduleModal = scheduleModal.querySelector(".close");
+
+        openScheduleModal.onclick = function(e) {
+            e.preventDefault();
+            scheduleModal.style.display = "block";
+        };
+
+        closeScheduleModal.onclick = function() {
+            scheduleModal.style.display = "none";
+        };
+
+        window.addEventListener("click", function(event) {
+            if (event.target === scheduleModal) {
+                scheduleModal.style.display = "none";
+            }
+        });
     </script>
 </body>
 </html>
