@@ -831,25 +831,58 @@
     </div>
 
     <script>
-        const modal = document.getElementById("scheduleModal");
-        const openModal = document.getElementById("openScheduleModal");
-        const closeModal = modal.querySelector(".close");
+        // Modal de Programa
+        const scheduleModal = document.getElementById("scheduleModal");
+        const openScheduleModal = document.getElementById("openScheduleModal");
+        const closeScheduleModal = scheduleModal.querySelector(".close");
 
-        openModal.onclick = function(e) {
+        openScheduleModal.onclick = function(e) {
             e.preventDefault();
-            modal.style.display = "block";
+            scheduleModal.style.display = "block";
         };
 
-        closeModal.onclick = function() {
-            modal.style.display = "none";
+        closeScheduleModal.onclick = function() {
+            scheduleModal.style.display = "none";
         };
 
         window.addEventListener("click", function(event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
+            if (event.target === scheduleModal) {
+                scheduleModal.style.display = "none";
             }
         });
-        
+
+        // Modal de registro
+        const registerModal = document.getElementById("registerModal");
+        const btn1 = document.getElementById("registerBtn");
+        const btn2 = document.getElementById("registerBtn2");
+        const span = registerModal.getElementsByClassName("close")[0];
+        // const closeBtn = document.getElementById("closeModalBtn"); // Si no existe, puedes eliminar esta línea
+
+        btn1.onclick = function() {
+            registerModal.style.display = "block";
+            return false;
+        }
+
+        btn2.onclick = function() {
+            registerModal.style.display = "block";
+            return false;
+        }
+
+        span.onclick = function() {
+            registerModal.style.display = "none";
+        }
+
+        // Si tienes un botón con id="closeModalBtn", descomenta y usa esto:
+        // closeBtn.onclick = function() {
+        //     registerModal.style.display = "none";
+        // }
+
+        window.addEventListener("click", function(event) {
+            if (event.target == registerModal) {
+                registerModal.style.display = "none";
+            }
+        });
+
         // Función para las pestañas
         function openTab(evt, tabName) {
             var i, tabcontent, tabbuttons;
@@ -877,57 +910,6 @@
                     behavior: 'smooth'
                 });
             });
-        });
-        
-        // Modal de registro
-        const modal = document.getElementById("registerModal");
-        const btn1 = document.getElementById("registerBtn");
-        const btn2 = document.getElementById("registerBtn2");
-        const span = document.getElementsByClassName("close")[0];
-        const closeBtn = document.getElementById("closeModalBtn");
-        
-        btn1.onclick = function() {
-            modal.style.display = "block";
-            return false;
-        }
-        
-        btn2.onclick = function() {
-            modal.style.display = "block";
-            return false;
-        }
-        
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-        
-        closeBtn.onclick = function() {
-            modal.style.display = "none";
-        }
-        
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        // Modal de Programa
-        const scheduleModal = document.getElementById("scheduleModal");
-        const openScheduleModal = document.getElementById("openScheduleModal");
-        const closeScheduleModal = scheduleModal.querySelector(".close");
-
-        openScheduleModal.onclick = function(e) {
-            e.preventDefault();
-            scheduleModal.style.display = "block";
-        };
-
-        closeScheduleModal.onclick = function() {
-            scheduleModal.style.display = "none";
-        };
-
-        window.addEventListener("click", function(event) {
-            if (event.target === scheduleModal) {
-                scheduleModal.style.display = "none";
-            }
         });
     </script>
 </body>
