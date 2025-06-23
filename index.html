@@ -485,7 +485,7 @@
                 <p class="evento-fecha">25 al 27 de Agosto 2025</p>
                 <div class="hero-buttons">
                     <a href="#register" class="btn btn-secondary" id="registerBtn">Registrarse Ahora</a>
-                    <a href="#programa" class="btn">Ver Programa</a>
+                    <a href="#programa" class="btn" id="openScheduleModal">Ver Programa Detallado</a>
                 </div>
             </div>
         </div>
@@ -789,8 +789,67 @@
             </div>
         </div>
     </footer>
+    
+    <!-- Modal de Prorgrama -->
+    <div id="scheduleModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 class="text-center" style="color: var(--primary);">Agenda del Congreso</h2>
+            <div style="max-height: 70vh; overflow-y: auto; padding-right: 10px;">
+                <h3 style="color: var(--secondary);">25 de Agosto - Taller Precongreso</h3>
+                <ul>
+                    <li><strong>7:30 - 8:00 AM:</strong> Registro y entrega de kit</li>
+                    <li><strong>8:00 - 10:30 AM:</strong> Mindfulness – MSc. Lester Mendoza</li>
+                    <li><strong>10:30 - 10:45 AM:</strong> Refrigerio</li>
+                    <li><strong>10:45 - 1:15 PM:</strong> Técnicas no farmacológicas – Lic. Ethel Maldonado y Lic. Nuria Urquía</li>
+                </ul>
+
+                <h3 style="color: var(--secondary);">26 de Agosto - Congreso Día 1</h3>
+                <ul>
+                    <li><strong>7:00 - 7:55 AM:</strong> Registro y entrega de kit</li>
+                    <li><strong>8:00 - 8:35 AM:</strong> Trastornos médicos asociados – Dr. Alex Nuñez</li>
+                    <li><strong>8:35 - 9:05 AM:</strong> Recaídas y psicofármacos – Dra. Diana Banegas</li>
+                    <li><strong>9:05 - 9:40 AM:</strong> Efectos cognitivos – MSc. María José Irías</li>
+                    <li><strong>9:40 - 9:55 AM:</strong> Refrigerio</li>
+                    <li><strong>10:00 AM - 5:00 PM:</strong> Más de 8 conferencias especializadas</li>
+                </ul>
+
+                <h3 style="color: var(--secondary);">27 de Agosto - Congreso Día 2</h3>
+                <ul>
+                    <li><strong>7:00 AM:</strong> Registro</li>
+                    <li><strong>8:00 - 9:40 AM:</strong> Endocrinología, salud mental y nutrición</li>
+                    <li><strong>9:40 - 9:55 AM:</strong> Refrigerio</li>
+                    <li><strong>10:00 AM - 5:00 PM:</strong> Adicciones, cuidadores, arte terapia, IA y más</li>
+                </ul>
+                <p><strong>Ubicación:</strong> Aula Magna, Universidad José Cecilio del Valle</p>
+            </div>
+
+            <div class="modal-footer">
+                <a href="#register" class="btn btn-secondary">Registrarse</a>
+            </div>
+        </div>
+    </div>
 
     <script>
+        const modal = document.getElementById("scheduleModal");
+        const openModal = document.getElementById("openScheduleModal");
+        const closeModal = modal.querySelector(".close");
+
+        openModal.onclick = function(e) {
+            e.preventDefault();
+            modal.style.display = "block";
+        };
+
+        closeModal.onclick = function() {
+            modal.style.display = "none";
+        };
+
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+        
         // Función para las pestañas
         function openTab(evt, tabName) {
             var i, tabcontent, tabbuttons;
