@@ -327,6 +327,33 @@
             box-shadow: 0 20px 60px 0 rgba(44,0,60,0.22), 0 2px 8px 0 rgba(147,38,143,0.13);
         }
 
+        /* Mejorar posición y estilo del botón de cerrar (X) en los modales */
+        .modal-content .close {
+            position: absolute;
+            top: 18px;
+            right: 28px;
+            font-size: 2.1rem;
+            color: #93268f;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10;
+            background: none;
+            border: none;
+            line-height: 1;
+            transition: color 0.2s, transform 0.2s;
+        }
+        .modal-content .close:hover {
+            color: #e05a2b;
+            transform: scale(1.18) rotate(8deg);
+        }
+        @media (max-width: 600px) {
+            .modal-content .close {
+                top: 8px;
+                right: 14px;
+                font-size: 1.5rem;
+            }
+        }
+
         /* Tablas más elegantes */
         .schedule-modal-table {
             width: 100%;
@@ -466,7 +493,7 @@
     <!-- Modal de Registro -->
     <div id="registerModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" title="Cerrar">&times;</span>
             <h2 class="text-center" style="color: var(--primary);">Proceso de Registro</h2>
             <p class="text-center mb-4">Sigue estos sencillos pasos para completar tu inscripción:</p>
             
@@ -765,7 +792,7 @@
     <!-- Modal de Prorgrama -->
     <div id="scheduleModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" title="Cerrar">&times;</span>
             <h2 class="text-center" style="color: var(--primary);margin-bottom:0.5em;">Agenda del Congreso</h2>
             <div style="max-height: 70vh; overflow-y: auto; padding-right: 2px;">
                 <div class="schedule-modal-day">25 de Agosto - Taller Precongreso</div>
@@ -855,7 +882,7 @@
                 <p style="margin-top:1.5em;"><strong>Ubicación:</strong> Aula Magna, Universidad José Cecilio del Valle</p>
             </div>
             <div class="modal-footer">
-                <a href="#register" class="btn btn-secondary">Registrarse</a>
+                <a href="#register" class="btn btn-secondary" id="agendaRegisterBtn">Registrarse</a>
             </div>
         </div>
     </div>
@@ -915,6 +942,11 @@
         // Cerrar el modal al hacer clic en "Ir al Formulario"
         document.getElementById("goToFormBtn").addEventListener("click", function() {
             hideModal(registerModal);
+        });
+
+        // Cerrar el modal de agenda al hacer clic en "Registrarse"
+        document.getElementById("agendaRegisterBtn").addEventListener("click", function() {
+            hideModal(scheduleModal);
         });
 
         // Función para las pestañas
