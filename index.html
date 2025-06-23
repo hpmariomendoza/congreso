@@ -432,6 +432,49 @@
             display: inline-block;
         }
 
+        /* Fila de refrigerio con fondo de rayas rosadas y blanco */
+        .schedule-modal-table tr.refrigerio-row td {
+            background: repeating-linear-gradient(
+                135deg,
+                #f6eaff 0 10px,
+                #fff 10px 20px
+            ) !important;
+            font-weight: bold;
+            color: #93268f;
+        }
+
+        /* Botón de registrar en el modal: siempre debajo y centrado, nunca sobre texto */
+        #scheduleModal .modal-footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5em 0 0.5em 0;
+            background: transparent;
+            flex-direction: row;
+            flex-wrap: wrap;
+            border-top: 1px solid #eee;
+            margin-top: 1.5em;
+        }
+
+        #scheduleModal .modal-footer .btn {
+            margin: 0.5em auto 0.5em auto;
+            min-width: 180px;
+            font-size: 1.1em;
+        }
+
+        @media (max-width: 600px) {
+            #scheduleModal .modal-footer {
+                flex-direction: column;
+                padding: 0.7em 0 0.5em 0;
+                margin-top: 1em;
+            }
+            #scheduleModal .modal-footer .btn {
+                width: 100%;
+                min-width: unset;
+                font-size: 1em;
+            }
+        }
+
         /* Responsive para tablas y modal */
         @media (max-width: 600px) {
             .modal-content {
@@ -812,7 +855,7 @@
                         <td>Mindfulness (Atención plena)</td>
                         <td><strong>MSc. Lester Mendoza</strong><br><em>Psicólogo Clínico, Psicoanalista, Msc. en Salud Pública con énfasis en Salud Mental</em></td>
                     </tr>
-                    <tr>
+                    <tr class="refrigerio-row">
                         <td>10:30 AM 10:45 AM</td>
                         <td>Refrigerio</td>
                         <td></td>
@@ -840,7 +883,7 @@
                     <tr><td>8:35 AM 9:05 AM</td><td>Detección de recaída, fallas en la adherencia y efectos adversos a psicofármacos a nivel comunitario</td><td><strong>Dra. Diana Banegas</strong><br><em>Psiquiatra</em></td></tr>
                     <tr><td>9:05 AM 9:40 AM</td><td>Efectos cognitivos en los trastornos del estado de ánimo</td><td><strong>MSc. María José Irías</strong><br><em>Neuropsicóloga clínica, Diplomado en Geronto Geriatría, Docente Universitaria</em></td>
                     </tr>
-                    <tr><td>9:40 AM 9:55 AM</td><td>Refrigerio</td><td></td></tr>
+                    <tr class="refrigerio-row"><td>9:40 AM 9:55 AM</td><td>Refrigerio</td><td></td></tr>
                     <tr><td>9:55 AM 10:30 AM</td><td>Comorbilidades del TDAH en niños y adolescentes</td><td><strong>Dr. Alejandra Munguía</strong><br><em>Psiquiatra, Subespecialidad en Psiquiatría Infantil y de la Adolescencia, Maestría en Lengua y Literatura Hispánicas</em></td></tr>
                     <tr><td>10:30 AM 11:05 AM</td><td>Evaluación y manejo del paciente con trastorno de salud mental a nivel de la emergencia de un hospital psiquiátrico</td><td><strong>Dra. Maritza Figueroa</strong><br><em>Psiquiatra</em></td></tr>
                     <tr><td>11:05 AM 11:40 AM</td><td>Manejo hospitalario del paciente agitado</td><td><strong>Dr. Carlos Rosales</strong><br><em>Psiquiatra</em></td></tr>
@@ -849,7 +892,7 @@
                     <tr><td>1:00 AM 1:35 PM</td><td>Primeros auxilios en trastornos de salud mental en atención primaria y hospitales generales</td><td><strong>MSc. Nelman Raudales</strong><br><em>Enfermero, Psicólogo con maestría en psicología clínica, Técnico de urgencias, Bombero y voluntario en Cruz Roja</em></td></tr>
                     <tr><td>1:35 AM 2:05 PM</td><td>Historia universal de la salud mental y situación actual de la salud mental en Honduras, política de salud mental en Honduras</td><td><strong>Dr. Hector Murcia Pinto</strong><br><em>Psiquiatra</em></td></tr>
                     <tr><td>2:05 AM 2:40 PM</td><td>Atención del paciente geriátrico con trastorno de salud mental</td><td><strong>Dra. Yamileth Quintero</strong><br><em>Psiquiatra, Diplomado Universitario en la prevención de la violencia familiar</em></td></tr>
-                    <tr><td>2:40 AM 2:55 PM</td><td>Refrigerio</td><td></td></tr>
+                    <tr class="refrigerio-row"><td>2:40 AM 2:55 PM</td><td>Refrigerio</td><td></td></tr>
                     <tr><td>2:55 AM 3:30 PM</td><td>Reacción a estrés agudo, estrés post traumático</td><td><strong>Dra. Greybi Jackson</strong><br><em>Psiquiatra, Diplomado en Psicofarmacología</em></td></tr>
                     <tr><td>3:30 AM 4:05 PM</td><td>Trastorno de ansiedad generalizada clínica y diagnóstico, manejo psicofarmacológico</td><td><strong>Dr. Héctor Velasquez</strong><br><em>Psiquiatra, Diplomado en Psicoterapia Cognitivo Conductual, Gerontopsiquiatría, Educación Superior e Investigación en Ciencias de la Salud</em></td></tr>
                     <tr><td>4:05 AM 5:00 PM</td><td>Referencia adecuada del paciente con sospecha de trastornos de salud mental para atención especializada y aspectos bioéticos</td><td><strong>Dr. Mario Aguilar</strong><br><em>Psiquiatra, Certificado Europeo en Trastornos de ansiedad y del humor, Formación Pedagógica: Dirigido a la formación en investigación, Maestría en Bioética Dirigido a la Docencia e investigación</em></td></tr>
@@ -866,7 +909,7 @@
                     <tr><td>8:00 AM 8:35 AM</td><td>Disfunción endócrina asociada al uso de psicofármacos</td><td><strong>Dra. Maria Alejandra Ramos Guifarro</strong><br><em>Médico Internista, Subespecialidad en endocrinología</em></td></tr>
                     <tr><td>8:35 AM 9:05 AM</td><td>Medicamentos de depósito en salud mental</td><td><strong>Dra. Sara Murillo</strong><br><em>Psiquiatra</em></td></tr>
                     <tr><td>9:05 AM 9:40 AM</td><td>Análisis del estado nutricional y evaluación de la dieta en pacientes adultos hospitalizados en el HPMM</td><td><strong>MSc. Iris Cordova</strong><br><em>Licenciada en Administración Industrial y de Negocios, Licenciada en Nutrición, Msc. Internacional en Nutrición y Dietética con especialidad en nutrición Clínica</em></td></tr>
-                    <tr><td>9:40 AM 9:55 AM</td><td>Refrigerio</td><td></td></tr>
+                    <tr class="refrigerio-row"><td>9:40 AM 9:55 AM</td><td>Refrigerio</td><td></td></tr>
                     <tr><td>9:55 AM 10:30 AM</td><td>Adicciones</td><td><strong>Dra. Laura Mendoza</strong><br><em>Psiquiatra</em></td></tr>
                     <tr><td>10:30 AM 11:05 AM</td><td>Abordaje politrastorno</td><td><strong>Lic. Carlos Arias</strong><br><em>Licenciado en Psicología, Maestría en Psicología Clínica</em></td></tr>
                     <tr><td>11:05 AM 11:40 AM</td><td>Colecho: mitos y realidades</td><td><strong>MSc. María del Rosario Enriquez</strong><br><em>Terapeuta de Lenguaje, Psicóloga, Pasante de Maestría en Patología del Lenguaje y Habla</em><br><strong>MSc. Heysel Baca</strong><br><em>Licenciada en Psicología, Máster en Psicología Clínica Infantojuvenil</em></td></tr>
@@ -874,7 +917,7 @@
                     <tr><td>12:40 AM 1:40 PM</td><td>Autismo: caso clínico</td><td><strong>Dr. Charles Thomas Gordon</strong><br><em>Psiquiatra, Sub especialidad en psiquiatría infantil</em></td></tr>
                     <tr><td>1:40 AM 2:10 PM</td><td>El cuidador de pacientes con trastornos de salud mental: testimonio</td><td><strong>Lic. Marthy Suazo</strong></td></tr>
                     <tr><td>2:10 AM 2:45 PM</td><td>Sd del cuidador y su manejo</td><td><strong>Lic. Ethel Maldonado</strong><br><em>Psicóloga, Fisioterapeuta y Docente Universitaria</em><br><strong>Lic. Nuria Urquía</strong><br><em>Artista Plástica, Diseñadora Gráfica, Arte-terapeuta, Especialista en Gerontología Sanitaria Aplicada, Cuidadora por 25 años</em></td></tr>
-                    <tr><td>2:45 AM 3:00 PM</td><td>Refrigerio</td><td></td></tr>
+                    <tr class="refrigerio-row"><td>2:45 AM 3:00 PM</td><td>Refrigerio</td><td></td></tr>
                     <tr><td>3:00 AM 3:35 PM</td><td>Fisioterapia y terapia ocupacional en salud mental</td><td><strong>Lic. Ethel Maldonado</strong><br><em>Psicóloga, Fisioterapeuta/Docente Universitaria</em></td></tr>
                     <tr><td>3:35 AM 4:05 PM</td><td>Arteterapia como estímulo cognitivo y de calidad de vida</td><td><strong>Lic. Ethel Maldonado</strong><br><em>Psicóloga, Fisioterapeuta y Docente Universitaria</em><br><strong>Lic. Nuria Urquía</strong><br><em>Artista Plástica, Diseñadora Gráfica, Arte-terapeuta, Especialista en Gerontología Sanitaria Aplicada, Cuidadora por 25 años</em></td></tr>
                     <tr><td>4:05 AM 5:00 PM</td><td>Trastorno de pánico</td><td><strong>Dr. Mario Aguilar</strong><br><em>Psiquiatra, Certificado Europeo en Trastornos de ansiedad y del humor, Formación Pedagógica: Dirigido a la formación en investigación, Maestría en Bioética Dirigido a la Docencia e investigación</em></td></tr>
